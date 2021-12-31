@@ -1,0 +1,46 @@
+// New colors
+$pink: #EE4793;
+$light-pink: #F3A4CB;
+$lighter-pink: #f7d4e5;
+$lightest-pink: #fff2f8;
+$medium-grey: #555;
+
+
+// New font
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Vibur&display=swap');
+
+
+// Boostrap variable overrides
+$font-family-sans-serif: Itim, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$headings-font-family: Vibur;
+
+$enable-rounded: true;
+$border-radius: 1rem;
+
+$primary: $pink;
+$secondary: $light-pink;
+$body-bg: $lightest-pink;
+$breadcrumb-bg: $lighter-pink;
+
+$headings-color: $primary;
+$body-color: $medium-grey;
+$font-size-base: 1rem;
+$h1-font-size: $font-size-base * 3;
+$h2-font-size: $font-size-base * 2.5;
+
+
+@import "@plone/plonetheme-barceloneta-base/scss/barceloneta.scss";
+
+
+.searchButton.btn.btn-secondary {
+    border-radius: 0 $border-radius $border-radius 0;
+}
+.navbar {
+    border-radius: $border-radius $border-radius 0 0;
+}
+#plone-breadcrumb {
+    @include border-bottom-radius($border-radius);
+}
+#portal-header {
+    align-items: end;
+}

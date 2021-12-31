@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  plone6:
+    image: plone/plone-backend:6.0.0a2-python39
+    ports:
+      - "8080:8080"
+    volumes:
+      - type: bind
+        source: ./package-includes
+        target: /app/etc/package-includes
+      - type: bind
+        source: ./resources
+        target: /app/resources
+      - type: bind
+        source: ./data
+        target: /data
