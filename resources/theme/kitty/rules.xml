@@ -5,7 +5,7 @@
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:xi="http://www.w3.org/2001/XInclude">
 
-  <xi:include href="++theme++kitty/barceloneta.xml" />
+  <xi:include href="/++theme++kitty/rules-barceloneta.xml" />
 
   <rules css:if-content="#visual-portal-wrapper">
     <drop css:content="#portal-searchbox .searchSection" />

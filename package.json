@@ -3,11 +3,12 @@
     "path": "resources/theme/kitty"
   },
   "dependencies": {
-    "@plone/plonetheme-barceloneta-base": "^3.0.0-alpha8"
+    "@plone/plonetheme-barceloneta-base": "^3.0.0-beta5",
+    "bootstrap": "^5.2.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
-    "bootstrap": "^5.1.3",
+    "bestzip": "^2.2.1",
     "clean-css-cli": "^5.4.0",
     "nodemon": "^2.0.14",
     "npm-run-all": "^4.1.5",
@@ -18,11 +19,12 @@
   },
   "scripts": {
     "watch": "nodemon --watch scss/ --ext scss --exec \"npm run css-main\"",
-    "build": "npm-run-all css-compile-main css-prefix-main css-minify-main",
+    "build": "npm-run-all css-compile-main css-prefix-main css-minify-main zip",
     "css-main": "npm-run-all css-compile-main css-prefix-main css-minify-main",
     "css-compile-main": "sass --load-path=node_modules --style expanded --source-map --embed-sources --no-error-css $npm_package_config_path/scss/theme.scss:$npm_package_config_path/css/theme.css",
     "css-prefix-main": "postcss --config postcss.config.js --replace \"$npm_package_config_path/css/*.css\" \"!$npm_package_config_path/css/*.min.css\"",
     "css-minify-main": "cleancss -O1 --format breakWith=lf --with-rebase --source-map --source-map-inline-sources --output $npm_package_config_path/css/theme.min.css $npm_package_config_path/css/theme.css",
-    "css-lint": "stylelint \"$npm_package_config_path/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache"
+    "css-lint": "stylelint \"$npm_package_config_path/scss/**/*.scss\" --cache --cache-location .cache/.stylelintcache",
+    "zip": "bestzip $npm_package_config_path.zip $npm_package_config_path/*"
   }
 }

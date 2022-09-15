@@ -13,14 +13,10 @@ Create a Plone 6 Classic theme for TTW upload.
 
     npm install
     npm watch
+    code resources/theme/scss/theme.scss
     npm build
 
-## Zip Kitty Theme
+## Upload *kitty.zip* file in the Theming control panel
 
-    cd resources/theme
-    zip -r kitty.zip kitty
-
-## Upload Zipe file in the Theming control panel
-
-    http://localhost:8080/Plone/@@theming-controlpanel
+    https://www.my-plone-site.net/@@theming-controlpanel
 
